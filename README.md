@@ -2,13 +2,19 @@
 
 This take-home prototype contains a Portuguese customer-service assistant for a musical instrument store. The web demo is a self-contained, browser-only interface that can be opened directly from the project folder.
 
+## Live demo
+
+**[Open the Empório da Música demo](https://ferfaoliver-ferreira.github.io/Artefact_Project_AI_Engineer/)**
+
+GitHub Actions publishes the contents of `app/web` to GitHub Pages whenever the web demo changes on `main`. The live page is publicly accessible. Its browser data includes products, promotions, and categories, but no customer order records or emails; order lookup is disabled in the web demo.
+
 ## Try the web demo (Windows)
 
 1. Open `app/web` in File Explorer.
 2. Double-click `index.html` (or double-click `run_web.bat` from the project folder).
 3. Try a suggested question or type your own in Portuguese.
 
-The page does not use `127.0.0.1`, a local server, Python, an API key, or an internet connection. Keep `index.html`, `app.js`, `data.js`, and `styles.css` together in `app/web`. The catalog, promotions, categories, and sample orders are included in `data.js` as a local snapshot. Chat behavior is implemented in the browser for this demonstration; it does not call the Python agent.
+The page does not use `127.0.0.1`, a local server, Python, or an API key. Keep `index.html`, `app.js`, `data.js`, and `styles.css` together in `app/web`. The product catalog, promotions, and categories are included in `data.js` as a snapshot. Chat behavior is implemented in the browser for this demonstration; it does not call the Python agent.
 
 ## Run the Python prototype
 
@@ -30,7 +36,7 @@ python -m app.main
 
 - **Python CLI, no agent framework:** intent routing invokes explicit functions for catalog, promotion, order, and policy questions.
 - **Browser-only demo:** the small HTML/CSS/JavaScript chat page opens as a local file and uses a bundled CSV snapshot. It is intentionally self-contained to make the UI easy to try on Windows.
-- **Structured data stays structured:** catalog price, availability, promotion, and order facts are read from the supplied CSV snapshot and are not guessed by a language model.
+- **Structured data stays structured:** catalog price, availability, promotion, and order facts in the Python CLI are read from the supplied CSV snapshot and are not guessed by a language model.
 - **Policy retrieval:** the supplied policy PDF is represented by a reviewed Markdown knowledge base in `data/policies.md`. For this small fixed corpus, section lookup is simpler and more auditable than embedding-based RAG.
 - **Optional LLM in the CLI:** OpenAI Responses API is a wording layer only. It receives the customer question and verified tool results; it cannot call tools or override those facts. The browser demo does not use an LLM.
 - **Conversation state:** the CLI keeps context only in memory. The browser demo does not persist conversations or customer data.
@@ -39,7 +45,7 @@ python -m app.main
 ## Data and assumptions
 
 - CSVs are the supplied snapshot, not live inventory. The demo must not claim real-time accuracy.
-- Order lookup requires an order number and the email used for the purchase. The supplied order snapshot is historical; old delivery records are identified as historical, not live tracking.
+- The Python CLI order lookup requires an order number and the email used for the purchase. The supplied order snapshot is historical; old delivery records are identified as historical, not live tracking. The web demo has no order records and does not perform order lookups.
 - The policy manual contains inconsistent contact details (two WhatsApp numbers and two email spellings). The assistant avoids relying on disputed contact details and recommends confirmation with the store team.
 - No API exists to change/cancel orders, reserve stock, issue refunds, or record complaints. The assistant explains the next step without pretending it completed an action.
 - The sample product catalog contains instruments only; accessories are out of scope per the policy manual.
