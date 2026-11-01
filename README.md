@@ -20,13 +20,15 @@ python -m app.main
 
 ## Web interface
 
-Start the local test interface with the standard library HTTP server. On Windows, double-click `run_web.bat`, or run:
+Start the local test interface with the standard library HTTP server. On Windows, double-click `run_web.bat`. It opens a visible server terminal and your browser. Keep the server terminal open while you use the page; close it or press `Ctrl+C` to stop. The launcher uses Codex's bundled Python when available, then falls back to `py -3` or `python`.
+
+To start it manually from the project folder, run:
 
 ```bash
 py -3 -u -m app.web
 ```
 
-Keep the terminal window open while using the page. When the terminal prints `Empório da Música web app running at http://127.0.0.1:8000`, open that address in a browser on the same computer. Stop the server with `Ctrl+C`. The page sends messages to the same Python `respond` function used by the CLI. It runs locally and requires no additional package. The interface is a prototype for testing, not a production-ready public service.
+The page sends messages to the same Python `respond` function used by the CLI. It runs locally and requires no additional package. The interface is a prototype for testing, not a production-ready public service.
 
 ## Architecture and decisions
 
