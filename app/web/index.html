@@ -3,66 +3,73 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#193b35">
-  <title>Empório da Música | Atendimento</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/styles.css">
+  <meta name="theme-color" content="#f6f1e7">
+  <title>Empório da Música — Atendimento</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="page-shell">
-    <header class="topbar">
-      <a class="brand" href="#" aria-label="Empório da Música, início">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48"><path d="M31.8 7.8v23.5a7.1 7.1 0 1 1-3.3-6V14.1l-16 3.6v17.2a7.1 7.1 0 1 1-3.3-6V15.1c0-1.5 1-2.8 2.5-3.1l18-4.1a1.8 1.8 0 0 1 2.1 1.8Z" fill="currentColor"/></svg></span>
-        <span><strong>Empório</strong><small>DA MÚSICA</small></span>
-      </a>
-      <div class="topbar-note"><span class="live-dot"></span> Atendimento virtual <span class="note-divider">·</span> Campo Grande, MS</div>
-    </header>
+  <header class="site-header">
+    <a class="brand" href="#" aria-label="Empório da Música">
+      <span class="brand-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M22.8 3.8v16.1a5.1 5.1 0 1 1-2.6-4.4V8.1L9.1 10.7v12.1a5.1 5.1 0 1 1-2.6-4.4V9.4c0-1.1.7-2 1.8-2.2l12.7-3.1a1.5 1.5 0 0 1 1.8 1.5Z" fill="currentColor"/></svg></span>
+      <span class="brand-name">Empório<small>DA MÚSICA</small></span>
+    </a>
+    <div class="header-right"><span class="offline-pill"><i></i> DEMONSTRAÇÃO LOCAL</span><span class="header-place">Campo Grande · MS</span></div>
+  </header>
 
-    <main class="layout">
-      <section class="intro">
-        <div class="eyebrow"><span class="eyebrow-line"></span> SUA MÚSICA COMEÇA AQUI</div>
-        <h1>Encontre o som<br>que combina <em>com você.</em></h1>
-        <p class="intro-copy">Tire dúvidas sobre instrumentos, pedidos e a loja. Estamos aqui para ajudar sua próxima ideia a virar música.</p>
-        <div class="trust-row"><span class="trust-icon">♫</span><span>Um atendimento acolhedor, feito para quem ama música.</span></div>
-        <div class="decor-note note-one">♪</div><div class="decor-note note-two">♫</div>
-      </section>
+  <main class="page-layout">
+    <aside class="welcome-panel">
+      <div class="overline"><span></span> SUA MÚSICA COMEÇA AQUI</div>
+      <h1>Um bom papo.<br>Um novo <em>som.</em></h1>
+      <p class="welcome-copy">Encontre seu próximo instrumento e tire suas dúvidas com quem entende de música.</p>
+      <div class="service-card">
+        <div class="service-icon">♫</div>
+        <div><strong>Como podemos ajudar?</strong><span>Catálogo, pedidos e informações da loja.</span></div>
+      </div>
+      <div class="store-card">
+        <div class="store-card-heading"><span class="pin-icon">⌖</span><strong>Visite a nossa loja</strong></div>
+        <p>Rua 14 de Maio, 3200 — Centro<br>Campo Grande, MS · CEP 79202-333</p>
+        <div class="store-hours"><span>SEG–SEX</span><b>09h–18h</b><span>SÁBADO</span><b>09h–13h</b></div>
+      </div>
+      <div class="music-decoration" aria-hidden="true">♪</div>
+    </aside>
 
-      <section class="chat-card" aria-label="Conversa com atendimento virtual">
-        <div class="chat-head">
-          <div class="avatar"><svg viewBox="0 0 48 48" aria-hidden="true"><path d="M31.8 7.8v23.5a7.1 7.1 0 1 1-3.3-6V14.1l-16 3.6v17.2a7.1 7.1 0 1 1-3.3-6V15.1c0-1.5 1-2.8 2.5-3.1l18-4.1a1.8 1.8 0 0 1 2.1 1.8Z" fill="currentColor"/></svg></div>
-          <div class="agent-meta"><strong>Assistente Empório</strong><span><i></i> Online para ajudar</span></div>
-          <div class="head-menu" aria-hidden="true">•••</div>
+    <section class="chat-card" aria-label="Atendimento Empório da Música">
+      <div class="chat-header">
+        <div class="assistant-avatar"><svg viewBox="0 0 32 32" aria-hidden="true"><path d="M22.8 3.8v16.1a5.1 5.1 0 1 1-2.6-4.4V8.1L9.1 10.7v12.1a5.1 5.1 0 1 1-2.6-4.4V9.4c0-1.1.7-2 1.8-2.2l12.7-3.1a1.5 1.5 0 0 1 1.8 1.5Z" fill="currentColor"/></svg></div>
+        <div class="assistant-title"><strong>Assistente Empório</strong><span><i></i> Pronto para ajudar</span></div>
+        <button class="reset-button" id="reset-chat" type="button" title="Reiniciar conversa" aria-label="Reiniciar conversa">↻</button>
+      </div>
+
+      <div class="demo-notice"><span>i</span><p>Esta é uma demonstração local. Respostas de produtos e pedidos usam os dados de exemplo do desafio.</p></div>
+
+      <div class="conversation" id="conversation" aria-live="polite" aria-label="Mensagens da conversa">
+        <div class="day-label"><span>HOJE</span></div>
+        <article class="message assistant-message">
+          <div class="message-avatar">♫</div>
+          <div class="message-content"><div class="bubble">Olá! Que bom receber você por aqui 😊<br><br>Posso ajudar a encontrar um instrumento, consultar um pedido ou explicar nossas políticas. O que você gostaria de saber?</div><time>Agora</time></div>
+        </article>
+      </div>
+
+      <div class="quick-questions" id="quick-questions">
+        <div class="quick-label">PERGUNTAS PARA COMEÇAR</div>
+        <div class="quick-list">
+          <button type="button" data-prompt="Quais violões disponíveis custam até R$ 1.000?">Violões até R$ 1.000 <span>→</span></button>
+          <button type="button" data-prompt="Qual é o horário de funcionamento da loja?">Horário da loja <span>→</span></button>
+          <button type="button" data-prompt="Quais são as regras para devolver uma compra online?">Política de devolução <span>→</span></button>
         </div>
+      </div>
 
-        <div class="messages" id="messages" aria-live="polite" aria-label="Mensagens">
-          <div class="date-chip"><span>HOJE</span></div>
-          <div class="message-row agent-row">
-            <div class="mini-avatar">♫</div>
-            <div class="bubble-wrap"><div class="bubble agent-bubble">Olá! Que bom ter você por aqui 😊<br><br>Posso ajudar a encontrar um instrumento, consultar informações da loja ou explicar nossas políticas. O que você gostaria de saber?</div><time>Agora</time></div>
-          </div>
-        </div>
+      <form class="composer" id="chat-form">
+        <label class="visually-hidden" for="message-input">Escreva sua mensagem</label>
+        <textarea id="message-input" rows="1" maxlength="1000" placeholder="Escreva sua mensagem…" required></textarea>
+        <div class="composer-footer"><span>Enter para enviar · Shift + Enter para nova linha</span><button type="submit" id="send-button"><span>Enviar</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M12 5l7 7-7 7" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
+      </form>
+      <div class="chat-footnote">Demonstração offline · sem chamadas de API ou necessidade de iniciar um servidor</div>
+    </section>
+  </main>
 
-        <div class="suggestions" id="suggestions" aria-label="Sugestões de perguntas">
-          <span class="suggest-label">EXPERIMENTE PERGUNTAR</span>
-          <div class="suggestion-list">
-            <button type="button" data-prompt="Quais violões disponíveis custam até R$ 1.000?">Violões até R$ 1.000</button>
-            <button type="button" data-prompt="Qual é o horário de funcionamento da loja?">Horário da loja</button>
-            <button type="button" data-prompt="Quais são as regras de devolução para compra online?">Política de devolução</button>
-          </div>
-        </div>
-
-        <form class="composer" id="chat-form">
-          <label class="sr-only" for="message-input">Escreva sua mensagem</label>
-          <textarea id="message-input" rows="1" maxlength="2000" placeholder="Escreva sua mensagem..." required></textarea>
-          <div class="composer-bottom"><span class="composer-hint"><span class="sparkle">✳</span> Nosso assistente está aprendendo a cada conversa.</span><button class="send-button" type="submit" aria-label="Enviar mensagem"><span>Enviar</span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 4 17 8-17 8 2.5-8L4 4Zm2.5 8H21" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg></button></div>
-        </form>
-        <div class="privacy-note">As respostas sobre produtos refletem os dados de demonstração fornecidos.</div>
-      </section>
-    </main>
-    <footer><span>EMPÓRIO DA MÚSICA</span><span>Atendimento com carinho e conhecimento musical.</span></footer>
-  </div>
-  <script src="/app.js"></script>
+  <footer class="site-footer"><span>EMPÓRIO DA MÚSICA</span><span>Um atendimento feito com carinho e conhecimento musical.</span></footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
