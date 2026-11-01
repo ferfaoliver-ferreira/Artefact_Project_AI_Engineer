@@ -122,6 +122,7 @@
   }
 
   function orderReply(question) {
+    if (!store.orders.length) return "Para proteger os dados dos clientes, a consulta de pedidos não está habilitada nesta demonstração. Entre em contato com a equipe da loja pelos canais oficiais.";
     const idMatch = normalize(question).match(/\bpedido\s*#?(\d{1,6})\b/);
     const emailMatch = question.match(/[\w.+-]+@[\w.-]+\.[a-z]{2,}/i);
     if (!idMatch || !emailMatch) return "Para proteger seus dados, informe o número do pedido e o e-mail usado na compra.";
