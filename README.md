@@ -18,9 +18,20 @@ set OPENAI_API_KEY=your_key   # PowerShell: $env:OPENAI_API_KEY="..."
 python -m app.main
 ```
 
+## Web interface
+
+Start the local test interface with the standard library HTTP server:
+
+```bash
+python -m app.web
+```
+
+Then open `http://127.0.0.1:8000`. The page sends messages to the same Python `respond` function used by the CLI. It runs locally and requires no additional package. The interface is a prototype for testing, not a production-ready public service.
+
 ## Architecture and decisions
 
 - **Python CLI, no agent framework:** keeps the prototype easy to run and makes routing and tool behavior explicit. A small intent router invokes typed Python functions for catalog, promotion, order, or policy questions.
+- **Simple local web interface:** a small HTML/CSS/JavaScript chat page uses Python's standard-library HTTP server, so it exercises the same agent without adding a web-framework dependency. The interface is styled with forest green, warm cream, and wood-inspired ochre accents.
 - **Structured data stays structured:** the CSV tables are loaded with Python's `csv` module and queried directly. Price, availability, promotion validity, and order status are never guessed by the language model.
 - **Policy retrieval:** the supplied policy PDF is represented by a compact, reviewed Markdown knowledge base in `data/policies.md`. For this small fixed corpus, section lookup is simpler and more auditable than embedding-based RAG. The prototype's response templates map common questions to relevant policy sections.
 - **Optional LLM:** OpenAI Responses API is an optional wording layer. It receives the customer question and only the facts returned by tools; it cannot call tools itself or override those facts. With no API key, templates provide a complete local experience.
